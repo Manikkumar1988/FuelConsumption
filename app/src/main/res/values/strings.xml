@@ -3,4 +3,9 @@
   <string name="title_home">Home</string>
   <string name="title_dashboard">Dashboard</string>
   <string name="title_notifications">Notifications</string>
+  <string name="hint_refueling_date">Refueling date</string>
+  <string name="hint_current_odometer">Current odometer</string>
+  <string name="hint_fuel_unit_price">Fuel unit price</string>
+  <string name="hint_fuel_volume">Fuel volume</string>
+  <string name="hint_fuel_total_cost">Total cost</string>
 </resources>
