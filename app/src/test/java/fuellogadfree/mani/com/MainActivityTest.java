@@ -1,50 +1,63 @@
 package fuellogadfree.mani.com;
 
 import android.app.Activity;
-import android.widget.TextView;
+import android.app.Fragment;
+import fuellogadfree.mani.com.ui.MainActivity;
+import fuellogadfree.mani.com.ui.fragment.DashboardFragment;
+import fuellogadfree.mani.com.ui.fragment.LogEntryFragment;
+import fuellogadfree.mani.com.ui.fragment.LogsFragment;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
-import static org.assertj.core.api.Assertions.assertThat;
 
+import static org.junit.Assert.assertEquals;
 
 @RunWith(RobolectricTestRunner.class)
 public class MainActivityTest {
 
-  private TextView passwordView;
-  Activity activity;
+  private Fragment fragmentInView;
+  private Activity activity;
 
   @Before
   public void setUp() {
     activity = Robolectric.setupActivity(MainActivity.class);
-    passwordView =  activity.findViewById(R.id.message);
   }
 
   @Test
   public void appLaunchSuccess() {
-    assertThat(passwordView.getText().toString()).isEqualTo("Home");
+    fragmentInView = activity.getFragmentManager().findFragmentById(R.id.fragment_container);
+
+    assertEquals(fragmentInView.getClass().getSimpleName(),
+        DashboardFragment.class.getSimpleName());
   }
 
 
   @Test
   public void appNavigateToDashboard() {
     activity.findViewById(R.id.navigation_dashboard).performClick();
-    assertThat(passwordView.getText().toString()).isEqualTo("Dashboard");
+    fragmentInView = activity.getFragmentManager().findFragmentById(R.id.fragment_container);
+
+    assertEquals(fragmentInView.getClass().getSimpleName(), LogsFragment.class.getSimpleName());
   }
 
   @Test
   public void appNavigateToNotification() {
     activity.findViewById(R.id.navigation_notifications).performClick();
-    assertThat(passwordView.getText().toString()).isEqualTo("Notifications");
+    fragmentInView = activity.getFragmentManager().findFragmentById(R.id.fragment_container);
+
+    assertEquals(fragmentInView.getClass().getSimpleName(), LogEntryFragment.class.getSimpleName());
   }
 
 
   @Test
   public void appNavigateToHome() {
     activity.findViewById(R.id.navigation_home).performClick();
-    assertThat(passwordView.getText().toString()).isEqualTo("Home");
+    fragmentInView = activity.getFragmentManager().findFragmentById(R.id.fragment_container);
+
+    assertEquals(fragmentInView.getClass().getSimpleName(),
+        DashboardFragment.class.getSimpleName());
   }
 
 

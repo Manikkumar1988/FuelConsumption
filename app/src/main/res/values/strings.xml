@@ -8,4 +8,8 @@
   <string name="hint_fuel_unit_price">Fuel unit price</string>
   <string name="hint_fuel_volume">Fuel volume</string>
   <string name="hint_fuel_total_cost">Total cost</string>
+
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="log_Fragment">logs</string>
 </resources>
