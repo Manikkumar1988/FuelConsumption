@@ -2,8 +2,8 @@ package fuellogadfree.mani.com.ui
 
 import android.app.Fragment
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
-import android.support.v4.app.FragmentActivity
+import androidx.fragment.app.FragmentActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import fuellogadfree.mani.com.R
 import fuellogadfree.mani.com.R.id
 import fuellogadfree.mani.com.R.layout
